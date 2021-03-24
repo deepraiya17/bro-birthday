@@ -15,6 +15,6 @@ export default {
 img {
   height: 540px;
   /* margin: 100px; */
-  width: 80%;
+  /* width: 80%; */
 }
 </style>
