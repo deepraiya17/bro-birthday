@@ -1,6 +1,7 @@
 <template>
   <embed />
   <img :src="path" alt="DEEP" />
+
   <br />
   <div class="flew">
     <button @click="prevPhoto">Previous</button>
