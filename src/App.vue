@@ -21,7 +21,7 @@ export default {
   },
   data() {
     return {
-      maxNoOfPhoto: 14,
+      maxNoOfPhoto: 13,
       photoNumber: 1,
     };
   },
