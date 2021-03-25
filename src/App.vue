@@ -21,18 +21,11 @@
     <img :src="path" alt="DEEP" />
 
     <br />
-    <div class="flew">
-      <button @click="prevPhoto">પાછળ નો ફોટો</button>
-      <hello-world></hello-world>
-      <button @click="nextPhoto">આગળનો ફોટો</button>
-    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
 export default {
-  components: { HelloWorld },
   computed: {
     path() {
       return `/img/${this.photoNumber}.jpeg`;
