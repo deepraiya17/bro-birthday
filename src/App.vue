@@ -2,8 +2,6 @@
   <embed />
   <img :src="path" alt="DEEP" />
   <br />
-  {{ this.path }}
-  <br />
   <div class="flew">
     <button @click="prevPhoto">Previous</button>
     <hello-world></hello-world>
