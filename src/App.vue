@@ -1,4 +1,5 @@
 <template>
+  <embed />
   <img :src="path" alt="DEEP" />
   <br />
   {{ this.path }}
@@ -16,7 +17,7 @@ export default {
   components: { HelloWorld },
   computed: {
     path() {
-      return `/img/${this.photoNumber}.jpg`;
+      return `/img/${this.photoNumber}.jpeg`;
     },
   },
   data() {
