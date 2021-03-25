@@ -27,15 +27,15 @@ export default {
       return `/img/${this.photoNumber}.jpeg`;
     },
     msgA() {
-      return this.message.substring(0, this.photoNumber - 1);
+      return this.message.substring(0, this.photoNumber);
     },
   },
   data() {
     return {
       isVisible: false,
       maxNoOfPhoto: 30,
-      photoNumber: 1,
-      message: "Happy Birthday To Big Brother",
+      photoNumber: 0,
+      message: "Happy Birthday To Biig Brother",
     };
   },
   methods: {
@@ -44,10 +44,10 @@ export default {
       this.carousal();
     },
     carousal() {
-      if (this.photoNumber === this.maxNoOfPhoto) this.photoNumber = 1;
+      if (this.photoNumber === this.maxNoOfPhoto) return;
       this.photoNumber++;
 
-      setTimeout(this.carousal, 3000);
+      setTimeout(this.carousal, 6200);
     },
   },
 };
