@@ -1,5 +1,5 @@
 <template>
-  <!-- <img :src="path" alt="DEEP" /> -->
+  <img :src="path" alt="DEEP" />
   <br />
   {{ this.path }}
   <br />
@@ -16,12 +16,12 @@ export default {
   components: { HelloWorld },
   computed: {
     path() {
-      return `./assets/img/${this.photoNumber}.jpg`;
+      return `/img/${this.photoNumber}.jpg`;
     },
   },
   data() {
     return {
-      maxNoOfPhoto: 3,
+      maxNoOfPhoto: 14,
       photoNumber: 1,
     };
   },
