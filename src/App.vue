@@ -1,17 +1,49 @@
 <template>
-  <img src="./assets/IMG_0075.jpg" alt="bro" />
+  <!-- <img :src="path" alt="DEEP" /> -->
   <br />
-  <hello-world></hello-world>
+  {{ this.path }}
+  <br />
+  <div class="flew">
+    <button @click="prevPhoto">Previous</button>
+    <hello-world></hello-world>
+    <button @click="nextPhoto">Next</button>
+  </div>
 </template>
 
 <script>
 import HelloWorld from "./components/HelloWorld.vue";
 export default {
   components: { HelloWorld },
+  computed: {
+    path() {
+      return `./assets/img/${this.photoNumber}.jpg`;
+    },
+  },
+  data() {
+    return {
+      maxNoOfPhoto: 3,
+      photoNumber: 1,
+    };
+  },
+  methods: {
+    nextPhoto() {
+      if (this.photoNumber == this.maxNoOfPhoto) this.photoNumber = 0;
+      this.photoNumber++;
+    },
+    prevPhoto() {
+      if (this.photoNumber == 1) this.photoNumber = this.maxNoOfPhoto + 1;
+      this.photoNumber--;
+    },
+  },
 };
 </script>
 
 <style>
+.flew {
+  display: flex;
+  justify-content: space-between;
+}
+
 img {
   height: 540px;
   /* margin: 100px; */
