@@ -35,7 +35,7 @@ export default {
       isVisible: false,
       maxNoOfPhoto: 30,
       photoNumber: 0,
-      message: "Happy Birthday To Biig Brother",
+      message: " Happy Birthday To Biig Brother",
     };
   },
   methods: {
