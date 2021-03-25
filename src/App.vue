@@ -22,9 +22,9 @@
 
     <br />
     <div class="flew">
-      <button @click="prevPhoto">Previous</button>
+      <button @click="prevPhoto">પાછળ નો ફોટો</button>
       <hello-world></hello-world>
-      <button @click="nextPhoto">Next</button>
+      <button @click="nextPhoto">આગળનો ફોટો</button>
     </div>
   </div>
 </template>
@@ -42,20 +42,19 @@ export default {
     return {
       isVisible: false,
       maxNoOfPhoto: 13,
-      photoNumber: 1,
+      photoNumber: 0,
     };
   },
   methods: {
-    nextPhoto() {
-      if (this.photoNumber == this.maxNoOfPhoto) this.photoNumber = 0;
-      this.photoNumber++;
-    },
     changeVisibility() {
       this.isVisible = !this.isVisible;
+      this.carousal();
     },
-    prevPhoto() {
-      if (this.photoNumber == 1) this.photoNumber = this.maxNoOfPhoto + 1;
-      this.photoNumber--;
+    carousal() {
+      if (this.photoNumber === this.maxNoOfPhoto) this.photoNumber = 0;
+      this.photoNumber++;
+
+      setTimeout(this.carousal, 2000);
     },
   },
 };
@@ -66,10 +65,11 @@ body {
   margin: 0;
 }
 
-.asia {
+img {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  height: 513px;
 }
 .video {
   width: 0;
@@ -80,11 +80,5 @@ body {
 .flew {
   display: flex;
   justify-content: space-between;
-}
-
-img {
-  height: 540px;
-  /* margin: 100px; */
-  /* width: 80%; */
 }
 </style>
