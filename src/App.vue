@@ -1,4 +1,5 @@
 <template>
+  <div v-if="isVisible" class="textfree">{{ msgA }}</div>
   <div>
     <img
       class="asia"
@@ -30,12 +31,16 @@ export default {
     path() {
       return `/img/${this.photoNumber}.jpeg`;
     },
+    msgA() {
+      return this.message.substring(0, this.photoNumber);
+    },
   },
   data() {
     return {
       isVisible: false,
       maxNoOfPhoto: 13,
       photoNumber: 0,
+      message: "Happy Birthday To ",
     };
   },
   methods: {
@@ -56,6 +61,11 @@ export default {
 <style>
 body {
   margin: 0;
+}
+
+.textfree {
+  text-align: center;
+  color: blue;
 }
 
 img {
