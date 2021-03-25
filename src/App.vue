@@ -9,7 +9,7 @@
     />
   </div>
   <div v-if="isVisible">
-    <video width="320" height="100" controls autoplay>
+    <video width="320" height="0" controls autoplay>
       <source src="/video/1.mp4" type="video/mp4" />
     </video>
     <br />
@@ -27,7 +27,7 @@ export default {
       return `/img/${this.photoNumber}.jpeg`;
     },
     msgA() {
-      return this.message.substring(0, this.photoNumber);
+      return this.message.substring(0, this.photoNumber - 1);
     },
   },
   data() {
@@ -35,7 +35,7 @@ export default {
       isVisible: false,
       maxNoOfPhoto: 30,
       photoNumber: 1,
-      message: "Happy Birthday To Biig Brother",
+      message: "Happy Birthday To Big Brother",
     };
   },
   methods: {
@@ -44,7 +44,7 @@ export default {
       this.carousal();
     },
     carousal() {
-      if (this.photoNumber === this.maxNoOfPhoto) this.photoNumber = 0;
+      if (this.photoNumber === this.maxNoOfPhoto) this.photoNumber = 1;
       this.photoNumber++;
 
       setTimeout(this.carousal, 3000);
