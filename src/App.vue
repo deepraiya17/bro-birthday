@@ -9,14 +9,9 @@
     />
   </div>
   <div v-if="isVisible">
-    <iframe
-      class="video"
-      src="https://www.youtube.com/embed/_z-1fTlSDF0?start=3&autoplay=1"
-      title="YouTube video player"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen
-    ></iframe>
+    <video width="320" height="100" controls autoplay>
+      <source src="/video/1.mp4" type="video/mp4" />
+    </video>
     <br />
 
     <img :src="path" alt="DEEP" />
@@ -38,9 +33,9 @@ export default {
   data() {
     return {
       isVisible: false,
-      maxNoOfPhoto: 13,
-      photoNumber: 0,
-      message: "Happy Birthday To ",
+      maxNoOfPhoto: 30,
+      photoNumber: 1,
+      message: "Happy Birthday To Biig Brother",
     };
   },
   methods: {
@@ -52,7 +47,7 @@ export default {
       if (this.photoNumber === this.maxNoOfPhoto) this.photoNumber = 0;
       this.photoNumber++;
 
-      setTimeout(this.carousal, 2000);
+      setTimeout(this.carousal, 3000);
     },
   },
 };
